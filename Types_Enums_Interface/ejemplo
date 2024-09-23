@@ -1,0 +1,106 @@
+// Enums (Enumeraciones)
+// permitir definir un conjunto de constantes deben ser relacionadas entre si
+// que pueden ser usadas para identificar un tipo de dato
+// para representar un grupo de opciones predefinidas
+// mejorar la legibilidad de la codificacion
+// facilitar el mantenimiento de la codificacion
+
+enum TipoDeDato {
+    NUMERO,
+    TEXTO,
+    BOOLEAN
+}
+
+enum EstadoPedido{
+    PENDIENTE,
+    REALIZADO,
+    CANCELADO,
+    Entregado
+}
+
+let estadoActual = EstadoPedido.Entregado
+
+enum Roles {
+    ADMIN,
+    USER,
+    GUEST
+}
+
+let rolUsuario = Roles.USER
+
+
+//TYPES (TIPOS)
+//  PERMITE CREAR O DEFINIR UN ALIAS PARA TIPOS DE DATOS COMPLEJOS O PERSONALIZADOS
+// FORMA FLEXIBLE PARA COMBINAR O CREAR ESTRUCTURAS DE DATOS SIN NECESIDAD DE USAR CLASES O INTERFACES
+// UNIR TIPOS, REPRESENTAR TIPOS PRIMOITIVOS Y COMPLEJOS O TIPOS CONDICIONALES
+
+type Persona = {
+    nombre: string,
+    apellido: string,
+    edad: number,
+    sexo: boolean
+}
+
+let juan = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 25,
+    sexo: true
+}
+
+type Pedido = {
+    id: number,
+    nombre: string,
+    precio: number,
+    estado: EstadoPedido
+}
+
+let pedido = {
+    id: 1,
+    nombre: "Pedido de manzana",
+    precio: 10,
+    estado: EstadoPedido.REALIZADO
+}
+
+type Usuario = {
+    nombre: string,
+    apellido: string,
+    edad: number,
+    sexo: boolean,
+    rol: Roles
+}
+
+let usuario = {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 25,
+    sexo: true,
+    rol: Roles.USER
+}
+
+
+//INTERFACES (INTERFACES)
+// DEFINE LA FORMA O ESTRUCTURA DE UN OBJETO
+
+// FACILITAR LA EXTENSION DE LOS OBJETOS Y LA REUTILIZACION DE CÓDIGO
+
+interface Vehicle {
+    marca: string,
+    modelo: string,
+    color: string,
+    arrancar(): void;
+    apagar(): void;
+} 
+
+let coche: Vehicle = {
+    marca: "Nissan",
+    modelo: "Maxima",
+    color: "Blanco",
+    arrancar: () => console.log("Arrancando..."),
+    apagar: () => console.log("Apagando...")
+}
+
+coche.arrancar()
+coche.apagar()
+
+
